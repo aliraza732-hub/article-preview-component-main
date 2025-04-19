@@ -1,0 +1,93 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --light-bg: hsl(210, 46%, 95%);
+  --dark-text: hsl(217, 19%, 35%);
+  --share-bg: hsl(214, 17%, 51%);
+}
+
+body {
+  background-color: var(--light-bg);
+  font-family: 'Manrope', sans-serif; /* Add if using Google Fonts */
+}
+
+.article-card {
+  display: flex;
+  max-width: 60%;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+h4 {
+  margin-bottom: 5px;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.article-content {
+  padding: 2rem;
+  background: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.article-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.author-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.share-popup {
+  position: absolute;
+  background: var(--share-bg);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  right: -50px;
+  bottom: 80%;
+}
+
+.share-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--share-bg) transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .share-popup {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+}
