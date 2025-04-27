@@ -10,6 +10,11 @@
 body {
   background-color: var(--light-bg);
   font-family: 'Manrope', sans-serif; /* Add if using Google Fonts */
+  display: flex; /* Use Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
 }
 
 .article-card {
@@ -18,9 +23,10 @@ body {
   margin: 50px auto;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ 
 }
 h4 {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .article-image img {
@@ -77,8 +83,20 @@ h4 {
   border-style: solid;
   border-color: var(--share-bg) transparent transparent transparent;
 }
+.share-btn {
+  background-color: var(--light-bg);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
 
 @media (max-width: 768px) {
+  body {
+    display: block;
+  }
   .article-card {
     flex-direction: column;
     max-width: 90%;
@@ -89,5 +107,7 @@ h4 {
     bottom: 0;
     width: 100%;
     border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-around;
   }
 }

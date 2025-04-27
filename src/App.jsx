@@ -1,13 +1,20 @@
 import { useState } from "react";
 import "./App.css";
+import avatar from './assets/images/avatar-michelle.jpg';
+import drawers from './assets/images/drawers.jpg';
+import facebook from './assets/images/icon-facebook.svg';
+import twitter from './assets/images/icon-twitter.svg';
+import pinterest from './assets/images/icon-pinterest.svg';
+import shareIcon from './assets/images/icon-share.svg';
 
 function App() {
   const [isShareActive, setIsShareActive] = useState(false);
+  console.log(isShareActive);
 
   return (
     <div className="article-card">
       <div className="article-image">
-        <img src="/assets/images/drawers.jpg" alt="Furniture" />
+        <img src={drawers} alt="Furniture" />
       </div>
 
       <div className="article-content">
@@ -16,7 +23,7 @@ function App() {
 
         <div className="article-footer">
           <div className="author-info">
-            <img src="/assets/images/avatar-michelle.jpg" alt="Michelle" className="author-img" />
+            <img src={avatar} alt="Michelle" className="author-img" />
             <div>
               <h4>Michelle Appleton</h4>
               <span>28 Jun 2020</span>
@@ -28,20 +35,20 @@ function App() {
             className={`share-btn ${isShareActive ? "active" : ""}`}
             onClick={() => setIsShareActive(!isShareActive)}
           >
-            <img src="/assets/images/icon-share.svg" alt="Share" />
+            <img src={shareIcon} alt="Share" />
           </button>
 
           {isShareActive && (
             <div className="share-popup">
               <span>SHARE</span>
               <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/images/icon-facebook.svg" alt="Facebook" />
+                <img src={facebook} alt="Facebook" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/images/icon-twitter.svg" alt="Twitter" />
+                <img src={twitter}  alt="Twitter" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/images/icon-pinterest.svg" alt="Pinterest" />
+                <img src={pinterest} alt="Pinterest" />
               </a>
             </div>
           )}
